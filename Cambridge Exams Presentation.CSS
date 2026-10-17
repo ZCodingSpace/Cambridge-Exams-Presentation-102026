@@ -1,0 +1,718 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* print Settings */
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background-color: #000000 !important;
+    padding: 0 !important;
+  }
+
+  .slide-container {
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+    width: 297mm !important;
+    height: 210mm !important;
+  }
+
+  .slide-container:last-child {
+    page-break-after: none;
+  }
+}
+
+body {
+  padding: 1rem;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Tajawal", sans-serif;
+  color: #333;
+}
+
+.slide-container {
+  margin: 0 auto;
+  width: 1123px;
+  aspect-ratio: 297/210;
+  padding: 2rem;
+  position: relative;
+  flex-direction: column;
+  color: #FFFFFF;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: linear-gradient(135deg, #001228 0%, #00234B 55%, #00386E 100%);
+}
+
+.top-accent-line {
+  height: 0.8rem;
+  position: absolute;
+  top: -0.3rem;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.top-accent-line.teal {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      #3BB8B6 50%,
+      transparent 100%);
+}
+
+.top-accent-line.gold {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      #F2A900 50%,
+      transparent 100%);
+}
+
+.top-accent-line.colorful {
+  background: linear-gradient(90deg, #F2A900 0%, #3BB8B6 100%);
+}
+
+.slide-header-title {
+  margin: 0.4rem 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.slide-header-description {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: #A0AEC0;
+}
+
+.slide-footer-banner {
+  width: 100%;
+  padding: 0.6rem;
+  color: #A0AEC0;
+}
+
+/* Framework Styles - START */
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  flex: 1;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: right;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.basic-card {
+  border-radius: 8px;
+  border: 1px solid #FFFFFF14;
+  background: #FFFFFF05;
+  box-shadow: 0 8px 24px #00000033;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.teal-card {
+  border-radius: 8px;
+  border: 1px solid #3BB8B640;
+  background: #3BB8B611;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.gold-card {
+  border-radius: 8px;
+  border: 1px solid #F2A90040;
+  background: #F2A90011;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.teal-bg {
+  background-color: #3BB8B6;
+}
+
+.gold-bg {
+  background-color: #F2A900;
+}
+
+.teal-text {
+  color: #3BB8B6;
+}
+
+.gold-text {
+  color: #F2A900;
+}
+
+.card-text {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #A0AEC0;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  font-weight: 700;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Framework Styles - END */
+
+
+/* Slide 1: Hero - START */
+.header-logos-bar {
+  width: 100%;
+  padding-bottom: 0.8rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #FFFFFF1F;
+}
+
+.hero-logos {
+  height: 90px;
+}
+
+.hero-content {
+  flex-direction: column;
+  flex: 1;
+}
+
+.hero-badge {
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+}
+
+.hero-title {
+  max-width: 50rem;
+  margin: 1rem 0;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.hero-subtitle {
+  max-width: 30rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #A0AEC0;
+}
+
+.teal-separator {
+  width: 30rem;
+  height: 3px;
+  margin: 2rem 0;
+  border-radius: 100%;
+  background: linear-gradient(90deg, transparent, #3BB8B6, transparent);
+}
+
+.badge-item {
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
+  gap: 0.6rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dot-gold {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #F2A900;
+}
+
+/* Slide 1: Hero - END */
+
+
+/* Slide 2&4: الميزات والفوائد الرئيسية لاختبار Linguaskill & CEST - START */
+.slide-content-vertical {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.CEST-banner {
+  padding: 1.8rem 2.5rem;
+  border-right: 5px solid #3BB8B6;
+}
+
+.linguaSkill-banner {
+  padding: 1.8rem 2.5rem;
+  border-right: 5px solid #F2A900;
+}
+
+.banner-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  justify-content: flex-start;
+  gap: 0.4rem;
+}
+
+.CEST-banner p,
+.linguaSkill-banner p {
+  padding-top: 1rem;
+  text-align: right;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #E5E7EB;
+}
+
+.description-card {
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.description-card .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.description-card .card-text {
+  font-size: 1rem;
+}
+
+/* Slide 2&4: الميزات والفوائد الرئيسية لاختبار Linguaskill & CEST - END */
+
+/* Slide 3: جدول المقارنة بين Linguaskill و IELTS - START */
+.comparisons {
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+
+.comparisons .row {
+  padding: 0.48rem 1rem;
+  display: grid;
+  grid-template-columns: 1.4fr 2fr 2fr;
+  gap: 2rem;
+  text-align: right;
+  color: #A0AEC0;
+  border: none;
+}
+
+.comparisons .header-row {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.comparisons .column {
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.comparisons span {
+  font-size: 0.8rem;
+}
+
+.IELTS-col {
+  color: #718096;
+}
+
+/* Slide 3: جدول المقارنة بين Linguaskill و IELTS - END */
+
+/* Slide 5: حالات الاستخدام للقطاع المؤسسي - START */
+.usecases-wrapper {
+  padding: 4rem 0 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 1;
+}
+
+.usecase-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.usecase-header,
+.usecase-footer {
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.usecase-header .tag {
+  margin-left: 0.3rem;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #001228;
+}
+
+.usecase-header .title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.usecase-header .sub-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.usecase-card {
+  padding: 0.85rem 0.5rem;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.usecase-card .num-badge {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.48rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #001228;
+  border-radius: 50%;
+}
+
+/* Slide 5: حالات الاستخدام للقطاع المؤسسي - END */
+
+
+/* Slide 6: الأثر المؤسسي والعائد على الاستثمار - START */
+.roi-wrapper {
+  align-content: center;
+}
+
+.roi-card {
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+.roi-card .icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Slide 6: الأثر المؤسسي والعائد على الاستثمار - END */
+
+/* Slide 7: أقسام الاختبار والمدة الزمنية - START */
+.modules-wrapper {
+  width: 100%;
+  align-content: center;
+}
+
+.module-card {
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.module-card .icon {
+  width: 45px;
+  height: 45px;
+}
+
+.module-card h4 {
+  font-size: 1.4rem;
+  color: #FFFFFF;
+}
+
+.module-card .time {
+  width: fit-content;
+  margin-top: 0.4rem;
+  padding: 0.24rem 1rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Slide 7: أقسام الاختبار والمدة الزمنية - END */
+
+/* Slide 8: سلم الدرجات وتكافؤ المستويات CEFR - START */
+.CEFR-wrapper {
+  width: 100%;
+  flex: 1;
+}
+
+.CEFR-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.5rem;
+}
+
+.CEFR-table thead th {
+  padding: 1.4rem 0.8rem;
+  border-radius: 8px;
+}
+
+.CEFR-table tbody td {
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+
+.CEFR-table thead th:nth-child(1) {
+  width: 20%;
+}
+
+.CEFR-table thead th:nth-child(2) {
+  width: 30%;
+}
+
+.CEFR-table thead th:nth-child(3),
+.CEFR-table thead th:nth-child(4) {
+  width: 25%;
+}
+
+/* CEFR clo - START */
+.CEFR-table tbody span {
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.CEFR-table .C2 {
+  color: #E9D5FF;
+  border: 1px solid #A855F780;
+  background: #9333EA40;
+}
+
+.CEFR-table .C1 {
+  color: #BFDBFE;
+  border: 1px solid #60A5FA80;
+  background: #3B82F640;
+}
+
+.CEFR-table .B2 {
+  color: #A7F3D0;
+  border: 1px solid #34D39980;
+  background: #10B98140;
+}
+
+.CEFR-table .B1 {
+  color: #99F6E4;
+  border: 1px solid #2DD4BF80;
+  background: #14B8A640;
+}
+
+.CEFR-table .A2 {
+  color: #FDE68A;
+  border: 1px solid #FBBF2480;
+  background: #F59E0B40;
+}
+
+.CEFR-table .A1 {
+  color: #FFEDD5;
+  border: 1px solid #FB923C80;
+  background: #EA580C40;
+}
+
+.CEFR-table .below-A1 {
+  color: #E2E8F0;
+  border: 1px solid #94A3B880;
+  background: #64748B40;
+}
+
+/* CEFR clo - END */
+
+.CEFR-table tbody .description {
+  font-weight: 500;
+  color: #CBD5E1;
+}
+
+/* LingauSkill col - START */
+.CEFR-table thead .CEFR-th-linguaSkill {
+  padding: 2px 8px;
+  color: #F2A900;
+  border-radius: 4px;
+  border: 1px solid #F2A900;
+}
+
+.CEFR-table tbody .CEFR-td-linguaSkill {
+  font-weight: 700;
+  color: #F2A900;
+}
+
+.CEFR-table tbody .not-reported {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #94A3B8;
+}
+
+/* LingauSkill col - END */
+
+
+/* CEST col - START */
+.CEFR-table thead .CEFR-th-CEST {
+  padding: 2px 8px;
+  color: #3BB8B6;
+  border-radius: 4px;
+  border: 1px solid #3BB8B6;
+}
+
+.CEFR-table tbody .none {
+  color: #64748B;
+}
+
+.CEFR-table tbody .CEFR-td-CEST {
+  font-weight: 700;
+  color: #3BB8B6;
+}
+
+/* CEST col - END */
+
+/* Slide 8: سلم الدرجات وتكافؤ المستويات CEFR - END */
+
+
+/* Slide 9&10: الشهادات والتقارير الرسمية - START */
+.certificates-wrapper {
+  gap: 1.4rem;
+  flex: 1;
+}
+
+.certificates-features-col {
+  flex: 0.6;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.certificates-features-col .card {
+  padding: 0.9rem;
+  gap: 0.8rem;
+}
+
+.certificates-samples-col {
+  flex: 1.4;
+  gap: 1rem;
+}
+
+.certificates-sample-card {
+  padding: 0.6rem 0.6rem 0.3rem;
+}
+
+.certificate-sample {
+  width: 100%;
+  height: auto;
+  max-height: 30rem;
+  margin-top: 0.8rem;
+  border-radius: inherit;
+}
+
+/* Slide 9&10: الشهادات والتقارير الرسمية - END */
+
+
+/* Slide 11: شريك موثوق لتقييم وتطوير الكفاءة اللغوية - START */
+.partner-wrapper {
+  gap: 1.4rem;
+  flex: 1;
+}
+
+.academy-col,
+.partner-col {
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.academy-col .img-container {
+  width: 85%;
+  padding: 0.8rem 1rem;
+}
+
+.authorized-center-img {
+  width: 100%;
+  height: auto;
+}
+
+.academy-card,
+.partner-card {
+  width: 100%;
+  padding: 1rem;
+  gap: 0.8rem;
+}
+
+.partner-card .icon {
+  width: 48px;
+}
+
+/* Slid 11: شريك موثوق لتقييم وتطوير الكفاءة اللغوية - END */
+
+/* Slide 12: ختام العرض والتواصل - START */
+.contact-slide-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 1.4rem;
+  flex: 1;
+}
+
+.main-points-cards {
+  gap: 1rem;
+}
+
+.main-points-cards .card {
+  padding: 1rem;
+  gap: 0.8rem;
+}
+
+.contact-card {
+  width: 100%;
+  padding: 1.1rem 1.3rem;
+}
+
+.contact-card .header {
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(242, 169, 0, 0.2);
+}
+
+.contact-body {
+  padding: 2rem 2rem 0;
+  gap: 2rem;
+}
+
+.academy-website {
+  flex-direction: column;
+}
+
+.academy-website .ALFAC-logo {
+  width: 8rem;
+  height: auto;
+}
+
+.contact-info {
+  height: 14rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.contact-info .title,
+.contact-info .email,
+.contact-info .phone {
+  margin: auto;
+  margin-right: 0.6rem;
+}
+
+/* Slide 12: ختام العرض والتواصل - END */
